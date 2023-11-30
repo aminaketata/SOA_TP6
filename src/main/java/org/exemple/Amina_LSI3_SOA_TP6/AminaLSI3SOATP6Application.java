@@ -11,10 +11,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
 import java.util.Date;
 import java.util.List;
-
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "org.exemple.repositories")
 @EntityScan(basePackages = "org.exemple.entities")

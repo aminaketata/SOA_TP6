@@ -15,14 +15,9 @@ public class Compte
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     Long Id;
-    @Column
     double Solde;
-    @Column
     Date dateCreation;
-    @Column
     TypeCompte type;
-    @Column
     EtatCompte etat;
 }

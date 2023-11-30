@@ -1,19 +1,18 @@
 package org.exemple.web;
-
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.exemple.entities.Compte;
 import org.exemple.repositories.CompteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.awt.*;
 import java.util.List;
-
 @Component
 @Path("/banque")
 public class CompteRestJaxRSAPI
 {
+
+    @Autowired
     private CompteRepository compteRepository;
     @Path("/comptes")
     @GET
@@ -44,5 +43,12 @@ public class CompteRestJaxRSAPI
     {
         compte.setId(id);
         return compteRepository.save(compte);
+    }
+    @Path("/comptes/{id}")
+    @DELETE
+    @Produces({MediaType.APPLICATION_JSON})
+    public void delete(@PathParam("id")Long id)
+    {
+        compteRepository.deleteById(id);
     }
 }
