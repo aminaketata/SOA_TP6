@@ -11,7 +11,6 @@ import java.util.List;
 @Path("/banque")
 public class CompteRestJaxRSAPI
 {
-
     @Autowired
     private CompteRepository compteRepository;
     @Path("/comptes")
